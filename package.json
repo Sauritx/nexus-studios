@@ -1,0 +1,26 @@
+{
+  "name": "nexus-studios",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --continue-on-error",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:generate": "pnpm --filter @nexus/db db:generate",
+    "db:migrate": "pnpm --filter @nexus/db db:migrate",
+    "db:studio": "pnpm --filter @nexus/db db:studio",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "prettier": "^3.3.3",
+    "turbo": "^2.4.0",
+    "typescript": "^5.5.4"
+  }
+}
